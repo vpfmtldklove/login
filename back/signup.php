@@ -23,5 +23,19 @@ location = '$location'
 ";
 echo $sql;
 $result = $conn -> query($sql);
-echo $result;
+    if ($result) {
+        echo "
+        <script>
+            location.href='todo.php';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+            location.back();
+        </script>
+        ";
+    }
+
+
 ?>
