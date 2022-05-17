@@ -10,5 +10,14 @@ if($user_no) {
         </script>
         ";
 }
+
+
+
+?>
+
+
+
+<?php 
+include('../back/header.php');
 include('../view/todo.html');
 ?>
