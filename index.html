@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    img .avatar{
+        width: 50%;
+        border-radius: 50%;
+    }
+    .imgcontainer{
+        text-align: center;
+        margin: 24px;
+    }
+    .cantainer{
+        padding: 16px;
+        background-color: #f1f1f1;
+    }
+    form{
+        border: 10px solid lightgray;
+    }
+    button {
+        background-color: lightcoral;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    input[type=text], input[type=password]{
+        width: 50%;
+        padding: 12px 20px;
+        text-align: centers;
+        box-sizing: border-box;
+        display: block;
+    }
+   
+    
+
+</style>
+<body>
+    <p id="time"></p>
+    <p id="date"></p>
+    <form action="action_page.php"></form>
+    <div class="imgcontainer">
+        <img src="./img/bg.jpg" alt="name" class="name">
+    </div>
+
+    <form action="./login.php" method="post">
+        <div class="container">
+            <label for="name"><b>Username</b></label>
+            <input name="id" type="text" placeholder="name" name="name" required>
+        
+            <label for="psw"><b>password</b></label>
+            <input name="pw" type="password" id="pwd" name="pwd">
+
+            <button onclick="login()" type="submit">Login</button>
+            <button onclick="signup()" style="margin-top: 8;" type="submit">signup</button>
+
+            <a href="fieldset.html">회원가입</a>
+        </div>
+    </form>
+    
+
+    
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    // 화면이 로드되고나서 실행    
+    window.onload = function() {
+    // 1초마다 반복하겠다.
+    setInterval(setclock , 1000);
+    
+}
+
+    
+    // alert("환영합니다.");
+    console.log('반갑습니다');
+
+    // 원래 로그인은 디비에 저장된 
+    // id pw를 비교해서 맞으며 
+    // 웹서버에 세션부여해서 로그인 유지
+    // 지금은 로그인 버튼 눌렀을때 
+    // id pw를 js에 출력.
+    
+    // function login() {
+    //     // querySelector는 html과 소통하는 길
+    //     var id = document.querySelector("input[name='id']").value;
+    //     var pw = document.querySelector("input[name='pw']").value;
+    //     alert("환영합니다!");
+    //     location.href = "todo.html";
+    // }
+
+    function signup() {
+        location.href = "signup.html"
+    }
+
+
+    function setclock() {
+        var date = new Date();
+        var time = date.getHours() + "시" + date.getMinutes()+ "분" + date.getSeconds()+ "초"
+        var ymd = date.getFullYear() + "년" + date.getMonth() + "월" + date. getDay() + "일";
+        document.getElementById("date").innerHTML = ymd;
+        document.getElementById("time").innerHTML = time;
+    }
+
+
+</script>
